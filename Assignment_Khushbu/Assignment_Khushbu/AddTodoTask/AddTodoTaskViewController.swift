@@ -13,12 +13,24 @@ protocol AddTodoPresenterOutput: class {
 
 class AddTodoTaskViewController: UIViewController {
 
+    @IBOutlet private weak var txtTaskTitle: UITextField!
+    @IBOutlet private weak var btnDate: UIButton!
+    @IBOutlet private weak var btnTime: UIButton!
+    
     var router: AddTodoRouter?
     var interactor: AddTodoInteractor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        prepareView()
+    }
+    
+    private func prepareView() {
+        let todayDate = Date()
+        let date = Date.stringFromCustomDate(fromDate: todayDate, withFormat: Date.dateOnly, capsFormatter: true)
+        let time = Date.stringFromCustomDate(fromDate: todayDate, withFormat: Date.timeOnly, capsFormatter: true)
+        btnDate.setTitle(date, for: .normal)
+        btnTime.setTitle(time, for: .normal)
     }
     
     @IBAction func btnCloseTap(_ sender: UIButton) {
@@ -26,7 +38,7 @@ class AddTodoTaskViewController: UIViewController {
     }
 
     @IBAction func btnSaveTap(_ sender: UIButton) {
-        self.interactor?.addTapped(with: "Hello")
+        self.interactor?.addTapped(with: txtTaskTitle.text ?? "", date: btnDate.titleLabel?.text ?? "", time: btnTime.titleLabel?.text ?? "")
     }
 
 }

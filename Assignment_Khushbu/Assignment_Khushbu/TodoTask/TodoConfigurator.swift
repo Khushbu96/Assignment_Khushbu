@@ -17,6 +17,7 @@ class TodoConfigurator {
         viewController.interactor = interactor
         interactor.presenter = presenter
         presenter.viewController = viewController
+        router.interactor = interactor
         router.navigationController = viewController.navigationController
     }
 }

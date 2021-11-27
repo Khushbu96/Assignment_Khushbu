@@ -22,6 +22,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XiP-ho-eJA">
                                         <rect key="frame" x="20" y="5" width="60" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="XiP-ho-eJA" secondAttribute="height" multiplier="1:1" id="DXF-iH-xhN"/>
                                             <constraint firstAttribute="width" constant="60" id="t2e-TI-LCo"/>
@@ -68,10 +69,10 @@
                                     <constraint firstAttribute="height" constant="100" id="esy-YU-f0Z"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ekb-tH-M6d">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ekb-tH-M6d">
                                 <rect key="frame" x="0.0" y="214" width="414" height="648"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6CS-P2-M75">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6CS-P2-M75">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -112,6 +113,7 @@
                     <connections>
                         <outlet property="btnAddTodoTask" destination="w8w-Rk-kyT" id="3cQ-mz-hND"/>
                         <outlet property="collectionViewTodos" destination="ekb-tH-M6d" id="Ugd-CB-sR1"/>
+                        <outlet property="lblUserName" destination="xei-cr-4AZ" id="zZE-6u-UtC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -182,12 +184,39 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0V-nf-jbU">
+                                                <rect key="frame" x="226" y="5" width="28" height="44"/>
+                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title=" ">
+                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vf6-dL-Zl9">
+                                                <rect key="frame" x="264" y="5" width="90" height="44"/>
+                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="90" id="ICa-mP-MI0"/>
+                                                    <constraint firstAttribute="height" constant="44" id="rRk-IJ-Ina"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title=" ">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                </buttonConfiguration>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="oOy-N8-XX4" firstAttribute="leading" secondItem="AFA-uC-hAR" secondAttribute="leading" id="8SI-e7-3zX"/>
+                                            <constraint firstItem="Y0V-nf-jbU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oOy-N8-XX4" secondAttribute="trailing" constant="10" id="Iik-Ac-Fy2"/>
+                                            <constraint firstItem="vf6-dL-Zl9" firstAttribute="leading" secondItem="Y0V-nf-jbU" secondAttribute="trailing" constant="10" id="JZT-T5-nco"/>
+                                            <constraint firstAttribute="trailing" secondItem="vf6-dL-Zl9" secondAttribute="trailing" id="LQT-YC-xTr"/>
+                                            <constraint firstItem="vf6-dL-Zl9" firstAttribute="top" secondItem="AFA-uC-hAR" secondAttribute="top" constant="5" id="aGo-sa-23Y"/>
                                             <constraint firstAttribute="height" constant="60" id="jTR-OJ-Osk"/>
+                                            <constraint firstItem="Y0V-nf-jbU" firstAttribute="height" secondItem="vf6-dL-Zl9" secondAttribute="height" id="mS2-sc-rer"/>
                                             <constraint firstItem="oOy-N8-XX4" firstAttribute="centerY" secondItem="AFA-uC-hAR" secondAttribute="centerY" id="pqF-Xd-iEa"/>
+                                            <constraint firstItem="Y0V-nf-jbU" firstAttribute="centerY" secondItem="vf6-dL-Zl9" secondAttribute="centerY" id="w7S-y3-VKw"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sNn-1Z-Bmp">
@@ -199,10 +228,15 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pl5-dm-OAS">
+                                                <rect key="frame" x="305" y="14.5" width="51" height="31"/>
+                                            </switch>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="pl5-dm-OAS" firstAttribute="centerY" secondItem="sNn-1Z-Bmp" secondAttribute="centerY" id="9MJ-l1-bBz"/>
                                             <constraint firstItem="PC2-mq-SL7" firstAttribute="leading" secondItem="sNn-1Z-Bmp" secondAttribute="leading" id="UTX-sG-crD"/>
+                                            <constraint firstAttribute="trailing" secondItem="pl5-dm-OAS" secondAttribute="trailing" id="YMa-iT-6bk"/>
                                             <constraint firstItem="PC2-mq-SL7" firstAttribute="centerY" secondItem="sNn-1Z-Bmp" secondAttribute="centerY" id="s7Z-zy-Ihv"/>
                                             <constraint firstAttribute="height" constant="60" id="zVI-JO-X7Y"/>
                                         </constraints>
@@ -253,6 +287,11 @@
                             <constraint firstItem="0Ru-O0-rdg" firstAttribute="trailing" secondItem="sJ7-Fg-EVL" secondAttribute="trailing" id="sNY-7l-WSr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnDate" destination="Y0V-nf-jbU" id="60a-oQ-XKh"/>
+                        <outlet property="btnTime" destination="vf6-dL-Zl9" id="h6x-Iu-HaG"/>
+                        <outlet property="txtTaskTitle" destination="TEI-vg-CDX" id="06Q-2c-kFF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hMY-Np-vP9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -265,6 +304,12 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

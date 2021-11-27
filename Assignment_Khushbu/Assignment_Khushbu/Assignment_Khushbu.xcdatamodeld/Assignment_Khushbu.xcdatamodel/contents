@@ -4,10 +4,11 @@
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="isAlertOn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isTaskCompleted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="todoDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="todoDate" optional="YES" attributeType="String"/>
+        <attribute name="todoTime" optional="YES" attributeType="String"/>
         <attribute name="todoTitle" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Todos" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="Todos" positionX="-63" positionY="-18" width="128" height="119"/>
     </elements>
 </model>

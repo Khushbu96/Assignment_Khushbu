@@ -8,13 +8,9 @@
 import UIKit
 
 protocol TodoPresenterOutput: class {
-    func presenter(didRetrieveTodos todos: [Todos])    
-    func presenter(didAddItem item: String)
-    func presenter(didFailAddItem message: String)
-    
+    func presenter(didRetrieveTodos todos: [Todos])
     func presenter(didDeleteItemAtIndex index: Int)
     func presenter(didFailDeleteItemAtIndex index: Int, message: String)
-    
     func presenter(didObtainItemId id: String)
     func presenter(didFailObtainItemId message: String)
 }
@@ -24,6 +20,7 @@ class TodoViewController: UIViewController {
     //MARK:- Outlets
     @IBOutlet private weak var collectionViewTodos: UICollectionView!
     @IBOutlet private weak var btnAddTodoTask: UIButton!
+    @IBOutlet private weak var lblUserName: UILabel!
     
     private var todos: [Todos] = []
     var interactor: TodoInteractor?
@@ -32,6 +29,7 @@ class TodoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         TodoConfigurator.configureModule(viewController: self)
+        lblUserName.text = UIDevice.current.name
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,8 +40,6 @@ class TodoViewController: UIViewController {
     @IBAction func btnAddTodoTaskTap(_ sender: UIButton) {
         self.router?.routeToOpen(with: nil)
     }
-    
-    
 }
 
 extension TodoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -54,6 +50,7 @@ extension TodoViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.registerAndGet(TodoCell.self, indexPath: indexPath)!
+        cell.todo = todos[indexPath.item]
         return cell
     }
     
@@ -67,14 +64,6 @@ extension TodoViewController: TodoPresenterOutput {
     func presenter(didRetrieveTodos todos: [Todos]) {
         self.todos = todos
         self.collectionViewTodos.reloadData()
-    }
-    
-    func presenter(didAddItem item: String) {
-        
-    }
-    
-    func presenter(didFailAddItem message: String) {
-        
     }
     
     func presenter(didDeleteItemAtIndex index: Int) {

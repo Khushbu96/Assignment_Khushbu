@@ -92,10 +92,11 @@
 		C4AA1D2C2752094900399C1C /* Assignment_Khushbu */ = {
 			isa = PBXGroup;
 			children = (
-				C4AA1D5F275218CB00399C1C /* AddTodoTask */,
+				C4AA1D68275222E900399C1C /* Application.swift */,
 				C4AA1D5A2752160F00399C1C /* Libraries */,
 				C4AA1D512752124C00399C1C /* CoredataModels */,
 				C4AA1D4427520E3900399C1C /* TodoTask */,
+				C4AA1D5F275218CB00399C1C /* AddTodoTask */,
 				C4AA1D2D2752094900399C1C /* AppDelegate.swift */,
 				C4AA1D2F2752094900399C1C /* SceneDelegate.swift */,
 				C4AA1D332752094900399C1C /* Main.storyboard */,
@@ -103,7 +104,6 @@
 				C4AA1D3B2752094C00399C1C /* LaunchScreen.storyboard */,
 				C4AA1D3E2752094C00399C1C /* Info.plist */,
 				C4AA1D362752094900399C1C /* Assignment_Khushbu.xcdatamodeld */,
-				C4AA1D68275222E900399C1C /* Application.swift */,
 			);
 			path = Assignment_Khushbu;
 			sourceTree = "<group>";

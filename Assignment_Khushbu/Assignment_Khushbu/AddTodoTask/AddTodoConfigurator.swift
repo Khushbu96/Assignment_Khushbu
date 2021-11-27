@@ -10,13 +10,14 @@ import UIKit
 
 class AddTodoConfigurator {
     
-    static func configureModule(naviagationController: UINavigationController, viewController: AddTodoTaskViewController, todoID: String) {
+    static func configureModule(todoInteractor: TodoInteractor, naviagationController: UINavigationController, viewController: AddTodoTaskViewController, todoID: String) {
         let router = AddTodoRouterImplementation()
         let interactor = AddTodoInteractorImplementation()
         let presenter = AddTodoPresenterImplementation()
         viewController.router = router
         viewController.interactor = interactor
         interactor.presenter = presenter
+        interactor.todoInteractor = todoInteractor
         presenter.viewController = viewController
         router.navigationController = naviagationController
     }

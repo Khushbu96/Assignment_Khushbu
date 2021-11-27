@@ -16,10 +16,47 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="154" height="159"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="lR4-fU-iyY">
+                        <rect key="frame" x="10" y="10" width="134" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Frl-xC-QGm">
+                        <rect key="frame" x="10" y="33" width="134" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDY-h0-qVT">
+                        <rect key="frame" x="10" y="56" width="134" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" systemColor="systemBrownColor"/>
+            <constraints>
+                <constraint firstItem="WDY-h0-qVT" firstAttribute="top" secondItem="Frl-xC-QGm" secondAttribute="bottom" constant="5" id="2hg-yk-6iE"/>
+                <constraint firstItem="WDY-h0-qVT" firstAttribute="leading" secondItem="Frl-xC-QGm" secondAttribute="leading" id="3we-is-Tr8"/>
+                <constraint firstItem="WDY-h0-qVT" firstAttribute="trailing" secondItem="Frl-xC-QGm" secondAttribute="trailing" id="Ft6-BS-J71"/>
+                <constraint firstItem="lR4-fU-iyY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="bhY-e8-l8y"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="WDY-h0-qVT" secondAttribute="bottom" constant="10" id="gr1-kO-96X"/>
+                <constraint firstItem="Frl-xC-QGm" firstAttribute="top" secondItem="lR4-fU-iyY" secondAttribute="bottom" constant="5" id="hR4-qo-RnM"/>
+                <constraint firstItem="lR4-fU-iyY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="vZd-B7-P1S"/>
+                <constraint firstAttribute="trailing" secondItem="lR4-fU-iyY" secondAttribute="trailing" constant="10" id="wUM-vR-Vfd"/>
+                <constraint firstItem="Frl-xC-QGm" firstAttribute="trailing" secondItem="lR4-fU-iyY" secondAttribute="trailing" id="wVO-nu-mcf"/>
+                <constraint firstItem="Frl-xC-QGm" firstAttribute="leading" secondItem="lR4-fU-iyY" secondAttribute="leading" id="xRx-RX-Qzf"/>
+            </constraints>
             <size key="customSize" width="154" height="159"/>
+            <connections>
+                <outlet property="lblDate" destination="lR4-fU-iyY" id="Izs-F1-7se"/>
+                <outlet property="lblTime" destination="Frl-xC-QGm" id="PQb-Gi-cNv"/>
+                <outlet property="lblTitle" destination="WDY-h0-qVT" id="zC3-8U-S8z"/>
+            </connections>
             <point key="canvasLocation" x="213.04347826086959" y="88.058035714285708"/>
         </collectionViewCell>
     </objects>

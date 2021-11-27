@@ -8,10 +8,16 @@
 import UIKit
 
 class TodoCell: UICollectionViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    @IBOutlet private weak var lblDate: UILabel!
+    @IBOutlet private weak var lblTime: UILabel!
+    @IBOutlet private weak var lblTitle: UILabel!
+    
+    var todo: Todos! {
+        didSet {
+            lblDate.text = todo.todoDate
+            lblTime.text = todo.todoTime
+            lblTitle.text = todo.todoTitle
+        }
     }
-
 }

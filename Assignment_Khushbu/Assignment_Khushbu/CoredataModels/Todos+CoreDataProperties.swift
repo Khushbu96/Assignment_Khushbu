@@ -18,9 +18,10 @@ extension Todos {
 
     @NSManaged public var id: String?
     @NSManaged public var todoTitle: String?
-    @NSManaged public var todoDate: Date?
+    @NSManaged public var todoDate: String?
     @NSManaged public var isAlertOn: Bool
     @NSManaged public var isTaskCompleted: Bool
+    @NSManaged public var todoTime: String?
 
 }
 

@@ -10,7 +10,7 @@ import CoreData
 
 protocol CoredataService: class {
     func getTodos() throws -> [Todos]
-    func addTodo(title: String) throws -> Todos
+    func addTodo(title: String, date: String, time: String) throws -> Todos
     func deleteTodo(with id: String) throws
     func getTodo(with id: String) throws -> Todos?
 }
@@ -37,11 +37,12 @@ class CoredataServiceImplementation: CoredataService {
         }
     }
     
-    func addTodo(title: String) throws -> Todos {
+    func addTodo(title: String, date: String, time: String) throws -> Todos {
         let todos = NSEntityDescription.insertNewObject(forEntityName: "Todos", into: managedContext) as! Todos
         todos.todoTitle = title
         todos.id = "\(Date.currentTimeStamp)"
-        todos.todoDate = Date()
+        todos.todoDate = date
+        todos.todoTime = time
         todos.isAlertOn = true
         todos.isTaskCompleted = false
         
