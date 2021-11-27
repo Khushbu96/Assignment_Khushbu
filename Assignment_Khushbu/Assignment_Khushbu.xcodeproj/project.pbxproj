@@ -25,6 +25,12 @@
 		C4AA1D61275218E500399C1C /* AddTodoTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA1D60275218E500399C1C /* AddTodoTaskViewController.swift */; };
 		C4AA1D6327521FCA00399C1C /* AddToDoTaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA1D6227521FCA00399C1C /* AddToDoTaskRouter.swift */; };
 		C4AA1D652752203200399C1C /* AddTodoConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA1D642752203200399C1C /* AddTodoConfigurator.swift */; };
+		C4AA1D672752221600399C1C /* CoredataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA1D662752221600399C1C /* CoredataServices.swift */; };
+		C4AA1D69275222E900399C1C /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA1D68275222E900399C1C /* Application.swift */; };
+		C4AA1D6D2752242700399C1C /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA1D6B2752242700399C1C /* TodoCell.swift */; };
+		C4AA1D6E2752242700399C1C /* TodoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4AA1D6C2752242700399C1C /* TodoCell.xib */; };
+		C4AA1D702752257400399C1C /* AddTodoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA1D6F2752257400399C1C /* AddTodoInteractor.swift */; };
+		C4AA1D722752258300399C1C /* AddTodoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA1D712752258300399C1C /* AddTodoPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +54,12 @@
 		C4AA1D60275218E500399C1C /* AddTodoTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoTaskViewController.swift; sourceTree = "<group>"; };
 		C4AA1D6227521FCA00399C1C /* AddToDoTaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoTaskRouter.swift; sourceTree = "<group>"; };
 		C4AA1D642752203200399C1C /* AddTodoConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoConfigurator.swift; sourceTree = "<group>"; };
+		C4AA1D662752221600399C1C /* CoredataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataServices.swift; sourceTree = "<group>"; };
+		C4AA1D68275222E900399C1C /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		C4AA1D6B2752242700399C1C /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
+		C4AA1D6C2752242700399C1C /* TodoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoCell.xib; sourceTree = "<group>"; };
+		C4AA1D6F2752257400399C1C /* AddTodoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoInteractor.swift; sourceTree = "<group>"; };
+		C4AA1D712752258300399C1C /* AddTodoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +103,7 @@
 				C4AA1D3B2752094C00399C1C /* LaunchScreen.storyboard */,
 				C4AA1D3E2752094C00399C1C /* Info.plist */,
 				C4AA1D362752094900399C1C /* Assignment_Khushbu.xcdatamodeld */,
+				C4AA1D68275222E900399C1C /* Application.swift */,
 			);
 			path = Assignment_Khushbu;
 			sourceTree = "<group>";
@@ -98,6 +111,7 @@
 		C4AA1D4427520E3900399C1C /* TodoTask */ = {
 			isa = PBXGroup;
 			children = (
+				C4AA1D6A2752240900399C1C /* Cells */,
 				C4AA1D4727520EE600399C1C /* TodoConfigurator.swift */,
 				C4AA1D4927520F0900399C1C /* TodoInteractor.swift */,
 				C4AA1D4B27520F2900399C1C /* TodoPresenter.swift */,
@@ -121,6 +135,7 @@
 			children = (
 				C4AA1D5B2752162D00399C1C /* Date+Extension.swift */,
 				C4AA1D5D2752166A00399C1C /* UICollectionView+Extension.swift */,
+				C4AA1D662752221600399C1C /* CoredataServices.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -131,8 +146,19 @@
 				C4AA1D60275218E500399C1C /* AddTodoTaskViewController.swift */,
 				C4AA1D6227521FCA00399C1C /* AddToDoTaskRouter.swift */,
 				C4AA1D642752203200399C1C /* AddTodoConfigurator.swift */,
+				C4AA1D6F2752257400399C1C /* AddTodoInteractor.swift */,
+				C4AA1D712752258300399C1C /* AddTodoPresenter.swift */,
 			);
 			path = AddTodoTask;
+			sourceTree = "<group>";
+		};
+		C4AA1D6A2752240900399C1C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C4AA1D6B2752242700399C1C /* TodoCell.swift */,
+				C4AA1D6C2752242700399C1C /* TodoCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +222,7 @@
 				C4AA1D3D2752094C00399C1C /* LaunchScreen.storyboard in Resources */,
 				C4AA1D3A2752094C00399C1C /* Assets.xcassets in Resources */,
 				C4AA1D352752094900399C1C /* Main.storyboard in Resources */,
+				C4AA1D6E2752242700399C1C /* TodoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,16 +235,21 @@
 			files = (
 				C4AA1D61275218E500399C1C /* AddTodoTaskViewController.swift in Sources */,
 				C4AA1D5E2752166A00399C1C /* UICollectionView+Extension.swift in Sources */,
+				C4AA1D69275222E900399C1C /* Application.swift in Sources */,
 				C4AA1D4827520EE600399C1C /* TodoConfigurator.swift in Sources */,
 				C4AA1D5C2752162D00399C1C /* Date+Extension.swift in Sources */,
 				C4AA1D5027520FA200399C1C /* TodoViewController.swift in Sources */,
 				C4AA1D652752203200399C1C /* AddTodoConfigurator.swift in Sources */,
 				C4AA1D4A27520F0900399C1C /* TodoInteractor.swift in Sources */,
+				C4AA1D722752258300399C1C /* AddTodoPresenter.swift in Sources */,
 				C4AA1D4E27520F4500399C1C /* TodoRouter.swift in Sources */,
+				C4AA1D672752221600399C1C /* CoredataServices.swift in Sources */,
 				C4AA1D6327521FCA00399C1C /* AddToDoTaskRouter.swift in Sources */,
 				C4AA1D592752127E00399C1C /* Todos+CoreDataProperties.swift in Sources */,
 				C4AA1D582752127E00399C1C /* Todos+CoreDataClass.swift in Sources */,
+				C4AA1D6D2752242700399C1C /* TodoCell.swift in Sources */,
 				C4AA1D4C27520F2900399C1C /* TodoPresenter.swift in Sources */,
+				C4AA1D702752257400399C1C /* AddTodoInteractor.swift in Sources */,
 				C4AA1D382752094900399C1C /* Assignment_Khushbu.xcdatamodeld in Sources */,
 				C4AA1D2E2752094900399C1C /* AppDelegate.swift in Sources */,
 				C4AA1D302752094900399C1C /* SceneDelegate.swift in Sources */,

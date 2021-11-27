@@ -16,10 +16,11 @@ extension Todos {
         return NSFetchRequest<Todos>(entityName: "Todos")
     }
 
-    @NSManaged public var id: Int64
+    @NSManaged public var id: String?
     @NSManaged public var todoTitle: String?
     @NSManaged public var todoDate: Date?
     @NSManaged public var isAlertOn: Bool
+    @NSManaged public var isTaskCompleted: Bool
 
 }
 
