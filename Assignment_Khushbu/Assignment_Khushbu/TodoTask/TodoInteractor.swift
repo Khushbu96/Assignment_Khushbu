@@ -9,10 +9,7 @@ import Foundation
 
 protocol TodoInteractor: class {
     func viewDidLoad()
-    func addTapped(with text: String)
-    
     func didCommitDelete(for index: Int)
-    
     func didSelectItems(at index: Int)
 }
 
@@ -20,13 +17,16 @@ class TodoInteractorImplementation: TodoInteractor {
 
     var presenter: TodoPresenter?
     
+    private let coredataService = CoredataServiceImplementation()
     private var todos: [Todos] = []
     
     func viewDidLoad()  {
-       
-    }
-    
-    func addTapped(with text: String) {
+        do {
+            self.todos = try coredataService.getTodos()
+            presenter?.interactor(didRetrieveTodo: todos)
+        } catch {
+            print("error")
+        }
     }
     
     func didCommitDelete(for index: Int) {

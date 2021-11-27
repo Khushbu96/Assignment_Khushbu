@@ -8,9 +8,7 @@
 import UIKit
 
 protocol TodoPresenterOutput: class {
-    func presenter(didRetrieveItems items: [String])
-    func presenter(didFailRetrieveItems message: String)
-    
+    func presenter(didRetrieveTodos todos: [Todos])    
     func presenter(didAddItem item: String)
     func presenter(didFailAddItem message: String)
     
@@ -36,6 +34,11 @@ class TodoViewController: UIViewController {
         TodoConfigurator.configureModule(viewController: self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        interactor?.viewDidLoad()
+    }
+    
     @IBAction func btnAddTodoTaskTap(_ sender: UIButton) {
         self.router?.routeToOpen(with: nil)
     }
@@ -55,7 +58,40 @@ extension TodoViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.frame.width - 50 / 2)
+        let width = (collectionView.frame.width - 30) / 2
         return CGSize(width: width, height: width)
     }
+}
+
+extension TodoViewController: TodoPresenterOutput {
+    func presenter(didRetrieveTodos todos: [Todos]) {
+        self.todos = todos
+        self.collectionViewTodos.reloadData()
+    }
+    
+    func presenter(didAddItem item: String) {
+        
+    }
+    
+    func presenter(didFailAddItem message: String) {
+        
+    }
+    
+    func presenter(didDeleteItemAtIndex index: Int) {
+        
+    }
+    
+    func presenter(didFailDeleteItemAtIndex index: Int, message: String) {
+        
+    }
+    
+    func presenter(didObtainItemId id: String) {
+        
+    }
+    
+    func presenter(didFailObtainItemId message: String) {
+        
+    }
+    
+    
 }

@@ -19,7 +19,7 @@ class TodoRouterImplementation: TodoRouter {
     
     func routeToOpen(with id: String? = nil) {
         let viewController = (navigationController?.storyboard?.instantiateViewController(withIdentifier: "AddTodoTaskViewController"))! as! AddTodoTaskViewController
-        AddTodoConfigurator.configureModule(viewController: viewController, todoID: id ?? "")
+        AddTodoConfigurator.configureModule(naviagationController: navigationController!, viewController: viewController, todoID: id ?? "")
         navigationController?.present(viewController, animated: true)
     }
 }

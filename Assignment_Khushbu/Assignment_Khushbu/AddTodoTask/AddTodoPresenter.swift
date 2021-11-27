@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+protocol AddTodoPresenter: class {
+    func interactor(didAddTodo todo: Todos)
+}
+
+class AddTodoPresenterImplementation: AddTodoPresenter {
+    weak var viewController: AddTodoPresenterOutput?
+    
+    func interactor(didAddTodo todo: Todos) {
+        viewController?.presenter(didAddTodo: todo)
+    }
+}

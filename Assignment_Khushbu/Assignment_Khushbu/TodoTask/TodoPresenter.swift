@@ -9,10 +9,7 @@ import Foundation
 
 protocol TodoPresenter: class {
     func interactor(didRetrieveTodo todos: [Todos])
-    func interactor(didFailRetrieveTodo error: Error)
-    
     func interactor(didAddTodo todo: Todos)
-    func interactor(didFailAddTodo error: Error)
     
     func interactor(didDeleteTodoAtIndex index: Int)
     func interactor(didFailDeleteTodoAtIndex index: Int)
@@ -24,9 +21,7 @@ class TodoPresenterImplementation: TodoPresenter {
     weak var viewController: TodoPresenterOutput?
     
     func interactor(didRetrieveTodo todos: [Todos]) {
-    }
-    
-    func interactor(didFailRetrieveTodo error: Error) {
+        viewController?.presenter(didRetrieveTodos: todos)
     }
     
     func interactor(didAddTodo todo: Todos) {
@@ -36,9 +31,6 @@ class TodoPresenterImplementation: TodoPresenter {
     }
     
     func interactor(didFailDeleteTodoAtIndex index: Int) {
-    }
-    
-    func interactor(didFailAddTodo error: Error) {
     }
     
     func interactor(didFindTodo todo: Todos) {

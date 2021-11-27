@@ -10,13 +10,13 @@ import UIKit
 
 protocol AddTodoRouter: class {
     var navigationController: UINavigationController? { get }
-    func popToTodo(with id: String?)
+    func popToTodo()
 }
 
 class AddTodoRouterImplementation: AddTodoRouter {
     weak var navigationController: UINavigationController?
     
-    func popToTodo(with id: String? = nil) {
-        navigationController?.popViewController(animated: true)
+    func popToTodo() {
+        navigationController?.dismiss(animated: true, completion: nil)
     }
 }

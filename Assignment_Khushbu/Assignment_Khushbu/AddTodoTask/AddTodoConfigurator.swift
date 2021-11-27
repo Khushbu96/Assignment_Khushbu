@@ -6,16 +6,18 @@
 //
 
 import Foundation
+import UIKit
 
 class AddTodoConfigurator {
     
-    static func configureModule(viewController: AddTodoTaskViewController, todoID: String) {
+    static func configureModule(naviagationController: UINavigationController, viewController: AddTodoTaskViewController, todoID: String) {
         let router = AddTodoRouterImplementation()
-//        let interactor = TodoInteractorImplementation()
-//        let presenter = TodoPresenterImplementation()
+        let interactor = AddTodoInteractorImplementation()
+        let presenter = AddTodoPresenterImplementation()
         viewController.router = router
-//        viewController.interactor = interactor
-//        interactor.presenter = presenter
-        router.navigationController = viewController.navigationController
+        viewController.interactor = interactor
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.navigationController = naviagationController
     }
 }
