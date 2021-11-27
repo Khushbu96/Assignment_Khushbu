@@ -20,6 +20,11 @@
 		C4AA1D5027520FA200399C1C /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA1D4F27520FA200399C1C /* TodoViewController.swift */; };
 		C4AA1D582752127E00399C1C /* Todos+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA1D562752127E00399C1C /* Todos+CoreDataClass.swift */; };
 		C4AA1D592752127E00399C1C /* Todos+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA1D572752127E00399C1C /* Todos+CoreDataProperties.swift */; };
+		C4AA1D5C2752162D00399C1C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA1D5B2752162D00399C1C /* Date+Extension.swift */; };
+		C4AA1D5E2752166A00399C1C /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA1D5D2752166A00399C1C /* UICollectionView+Extension.swift */; };
+		C4AA1D61275218E500399C1C /* AddTodoTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA1D60275218E500399C1C /* AddTodoTaskViewController.swift */; };
+		C4AA1D6327521FCA00399C1C /* AddToDoTaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA1D6227521FCA00399C1C /* AddToDoTaskRouter.swift */; };
+		C4AA1D652752203200399C1C /* AddTodoConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA1D642752203200399C1C /* AddTodoConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		C4AA1D4F27520FA200399C1C /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		C4AA1D562752127E00399C1C /* Todos+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todos+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C4AA1D572752127E00399C1C /* Todos+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todos+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C4AA1D5B2752162D00399C1C /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		C4AA1D5D2752166A00399C1C /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		C4AA1D60275218E500399C1C /* AddTodoTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoTaskViewController.swift; sourceTree = "<group>"; };
+		C4AA1D6227521FCA00399C1C /* AddToDoTaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoTaskRouter.swift; sourceTree = "<group>"; };
+		C4AA1D642752203200399C1C /* AddTodoConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +80,8 @@
 		C4AA1D2C2752094900399C1C /* Assignment_Khushbu */ = {
 			isa = PBXGroup;
 			children = (
+				C4AA1D5F275218CB00399C1C /* AddTodoTask */,
+				C4AA1D5A2752160F00399C1C /* Libraries */,
 				C4AA1D512752124C00399C1C /* CoredataModels */,
 				C4AA1D4427520E3900399C1C /* TodoTask */,
 				C4AA1D2D2752094900399C1C /* AppDelegate.swift */,
@@ -102,6 +114,25 @@
 				C4AA1D572752127E00399C1C /* Todos+CoreDataProperties.swift */,
 			);
 			path = CoredataModels;
+			sourceTree = "<group>";
+		};
+		C4AA1D5A2752160F00399C1C /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				C4AA1D5B2752162D00399C1C /* Date+Extension.swift */,
+				C4AA1D5D2752166A00399C1C /* UICollectionView+Extension.swift */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		C4AA1D5F275218CB00399C1C /* AddTodoTask */ = {
+			isa = PBXGroup;
+			children = (
+				C4AA1D60275218E500399C1C /* AddTodoTaskViewController.swift */,
+				C4AA1D6227521FCA00399C1C /* AddToDoTaskRouter.swift */,
+				C4AA1D642752203200399C1C /* AddTodoConfigurator.swift */,
+			);
+			path = AddTodoTask;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,10 +206,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4AA1D61275218E500399C1C /* AddTodoTaskViewController.swift in Sources */,
+				C4AA1D5E2752166A00399C1C /* UICollectionView+Extension.swift in Sources */,
 				C4AA1D4827520EE600399C1C /* TodoConfigurator.swift in Sources */,
+				C4AA1D5C2752162D00399C1C /* Date+Extension.swift in Sources */,
 				C4AA1D5027520FA200399C1C /* TodoViewController.swift in Sources */,
+				C4AA1D652752203200399C1C /* AddTodoConfigurator.swift in Sources */,
 				C4AA1D4A27520F0900399C1C /* TodoInteractor.swift in Sources */,
 				C4AA1D4E27520F4500399C1C /* TodoRouter.swift in Sources */,
+				C4AA1D6327521FCA00399C1C /* AddToDoTaskRouter.swift in Sources */,
 				C4AA1D592752127E00399C1C /* Todos+CoreDataProperties.swift in Sources */,
 				C4AA1D582752127E00399C1C /* Todos+CoreDataClass.swift in Sources */,
 				C4AA1D4C27520F2900399C1C /* TodoPresenter.swift in Sources */,

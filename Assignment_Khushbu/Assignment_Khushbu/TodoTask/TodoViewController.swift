@@ -23,21 +23,38 @@ protocol TodoPresenterOutput: class {
 
 class TodoViewController: UIViewController {
 
+    //MARK:- Outlets
+    @IBOutlet private weak var collectionViewTodos: UICollectionView!
+    @IBOutlet private weak var btnAddTodoTask: UIButton!
+    
+    private var todos: [Todos] = []
+    var interactor: TodoInteractor?
+    var router: TodoRouter?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        TodoConfigurator.configureModule(viewController: self)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnAddTodoTaskTap(_ sender: UIButton) {
+        self.router?.routeToOpen(with: nil)
     }
-    */
+    
+    
+}
 
+extension TodoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return todos.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (collectionView.frame.width - 50 / 2)
+        return CGSize(width: width, height: width)
+    }
 }

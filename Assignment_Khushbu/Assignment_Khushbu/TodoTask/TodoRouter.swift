@@ -11,13 +11,15 @@ import UIKit
 protocol TodoRouter: class {
     var navigationController: UINavigationController? { get }
     
-    func routeToOpen(with id: String)
+    func routeToOpen(with id: String?)
 }
 
 class TodoRouterImplementation: TodoRouter {
     weak var navigationController: UINavigationController?
     
-    func routeToOpen(with id: String) {
-        
+    func routeToOpen(with id: String? = nil) {
+        let viewController = (navigationController?.storyboard?.instantiateViewController(withIdentifier: "AddTodoTaskViewController"))! as! AddTodoTaskViewController
+        AddTodoConfigurator.configureModule(viewController: viewController, todoID: id ?? "")
+        navigationController?.present(viewController, animated: true)
     }
 }
